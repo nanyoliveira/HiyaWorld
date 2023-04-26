@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'HiyaWorld'
   s.version          = '0.1.0'
-  s.summary          = 'Get all ISO 3166 Countries API online and saves it offline, updating it when necessary'
+  s.summary          = 'Get all ISO 3166 Countries'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+    Get all ISO 3166 Countries API online and saves it offline so it is available without being hard coded in the project.
                        DESC
 
   s.homepage         = 'https://github.com/nanyoliveira/HiyaWorld'
@@ -28,15 +28,15 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/nanyoliveira/HiyaWorld.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/hiyacar'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '13.0'
 
-  s.source_files = 'HiyaWorld/Sources/HiyaWorld/**/*'
-  
+  s.source_files = 'Sources/HiyaWorld/**/*'
+  s.swift_versions = '5.2'
   # s.resource_bundles = {
-  #   'HiyaWorld' => ['HiyaWorld/Sources/Assets/*.png']
+  #   'HiyaWorld' => ['Sources/Assets/*.png']
   # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'Foundation'
-  # s.dependency 'RealmSwift', '~> 10'
+  #s.public_header_files = 'Sources/HiyaWorld/**/*.h'
+   s.frameworks = 'Foundation'
+    s.dependency 'RealmSwift', '~> 10'
 end
