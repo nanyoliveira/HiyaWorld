@@ -1,5 +1,5 @@
 # HiyaWorld
-This package will make available for the client code a list of countries from ISO 3166 based from the api on https://pkgstore.datahub.io/core/country-list/data_json/data/8c458f2d15d9f2119654b29ede6e45b8/data_json.json
+This library will make available a list of countries from ISO 3166 based from the api on https://pkgstore.datahub.io/core/country-list/
 
 Data coming from here >> https://datahub.io/core/country-list
 
