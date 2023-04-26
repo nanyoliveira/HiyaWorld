@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/hiyacar/HiyaWorld'
+  s.homepage         = 'https://github.com/nanyoliveira/HiyaWorld'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Ariane Clarke' => 'ariane.clarke@hiyacar.co.uk' }
-  s.source           = { :git => 'https://github.com/hiyacar/HiyaWorld.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/nanyoliveira/HiyaWorld.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/hiyacar'
 
   s.ios.deployment_target = '10.0'
