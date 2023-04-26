@@ -1,0 +1,6 @@
+use_frameworks!
+target 'HiyaWorld_Tests' do
+  pod 'HiyaWorld', :path => '../'
+  
+  
+end
