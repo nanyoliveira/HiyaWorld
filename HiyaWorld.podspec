@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
     Get all ISO 3166 Countries API online and saves it offline so it is available without being hard coded in the project.
                        DESC
 
-  s.homepage         = 'https://github.com/nanyoliveira/HiyaWorld'
+  s.homepage         = 'https://github.com/hiyacar/HiyaWorld'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Ariane Clarke' => 'ariane.clarke@hiyacar.co.uk' }
