@@ -6,21 +6,18 @@ public protocol HiyaWorld {
     func setSource(urlPath:String?)
     func syncronizeCountries(sincronized: @escaping (Error?)-> ())
     func getCountriesNames() -> [String]
-    func getCountriesAlfa2Code() ->[String]
-    func getAlfa2Code(byCountryName:String) -> String?
+    func getCountriesAlfa3Code() ->[String]
+    func getAlfa3Code(byCountryName:String) -> String?
 }
 
 final public class Countries: HiyaWorld, HiyaRequestAble {
-    private var _urlPath:String = "https://pkgstore.datahub.io/core/country-list/data_json/data/8c458f2d15d9f2119654b29ede6e45b8/data_json.json"
+    private var _urlPath:String = "https://pkgstore.datahub.io/core/country-codes/country-codes_json/data/616b1fb83cbfd4eb6d9e7d52924bb00a/country-codes_json.json"
     private let realm = try! Realm()
     private var _countries: [Country]
     
-    init(){
+    public init(){
         _countries = []
-        let realm = self.realm.objects(CountryRealm.self)
-        for country in realm {
-            _countries.append(Country(Code: country.code, Name: country.name))
-        }
+        self.populateCountries()
     }
 
     public func setSource(urlPath:String?) {
@@ -31,11 +28,10 @@ final public class Countries: HiyaWorld, HiyaRequestAble {
     
     public func syncronizeCountries(sincronized: @escaping (Error?)-> ()) {
         // download the country to realm
-        requestCountries(path: _urlPath, type: [Country].self) { _country, error in
+        self.requestCountries(path: self._urlPath, type: [Country].self) { _country, error in
             guard let countryCollection = _country else {
                 if error != nil{
                     sincronized(error)
-                    print(error?.localizedDescription ?? "")
                 }
                 return
             }
@@ -45,21 +41,30 @@ final public class Countries: HiyaWorld, HiyaRequestAble {
                     self?.realm.add(CountryRealm(country: country))
                 })
             }
+            self.populateCountries()
             sincronized(nil)
         }
     }
     
     public func getCountriesNames() -> [String] {
-        return _countries.map { $0.Name }
+        return self._countries.map { $0.name ?? "" }
     }
     
-    public func getCountriesAlfa2Code() ->[String] {
-        let codes = _countries.map({ $0.Code})
+    public func getCountriesAlfa3Code() ->[String] {
+        let codes = self._countries.map({ $0.code ?? "" })
         return codes
     }
     
-    public func getAlfa2Code(byCountryName:String) -> String? {
-        return _countries.filter({$0.Name == byCountryName})[0].Code
+    public func getAlfa3Code(byCountryName:String) -> String? {
+        let country = self._countries.filter({$0.name == byCountryName})
+        return country.first?.code
+    }
+    
+    private func populateCountries(){
+        let realm = self.realm.objects(CountryRealm.self)
+        for country in realm {
+            _countries.append(Country(code: country.code, name: country.name))
+        }
     }
 }
 #endif

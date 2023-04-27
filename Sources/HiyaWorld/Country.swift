@@ -9,9 +9,13 @@ import Foundation
 import RealmSwift
 
 struct Country: Codable {
-    var Code:String
-    var Name:String
+    var code:String?
+    var name:String?
 
+    private enum CodingKeys : String, CodingKey {
+        case code = "ISO3166-1-Alpha-3"
+        case name  = "CLDR display name"
+    }
 }
 
 class CountryRealm : Object {
@@ -26,7 +30,7 @@ class CountryRealm : Object {
     
     convenience init(country:Country) {
         self.init()
-        self.name = country.Name
-        self.code = country.Code
+        self.name = country.name ?? ""
+        self.code = country.code ?? ""
     }
 }
