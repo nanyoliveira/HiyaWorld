@@ -1,7 +1,5 @@
 # HiyaWorld
-This library will make available a list of countries from ISO 3166 based from the api on https://pkgstore.datahub.io/core/country-list/
-
-Data coming from here >> https://datahub.io/core/country-list
+This library will make available a list of countries and their Alpha 3 codes from ISO 3166 based from the api on https://pkgstore.datahub.io/core/country-list/
 
 ## Usage
 
@@ -12,11 +10,11 @@ Data coming from here >> https://datahub.io/core/country-list
         //get an Array the Countries names
         let _ = hiyaWorld.getCountriesNames()
         
-        //get and Array with the Countries Alpha 2 codes
-        let _ = hiyaWorld.getCountriesAlfa2Code()
+        //get and Array with the Countries Alpha 3 codes
+        let _ = hiyaWorld.getCountriesAlfa3Code()
         
         //get a String with the Alpha Name of the specific country
-        let _ = hiyaWorld.getAlfa2Code(byCountryName: "Australia")
+        let _ = hiyaWorld.getAlfa3Code(byCountryName: "Australia")
         
         
         if hiyaWorld.getCountriesNames().count > 0 {
