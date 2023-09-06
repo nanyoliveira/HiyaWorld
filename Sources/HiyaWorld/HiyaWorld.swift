@@ -63,7 +63,11 @@ final public class Countries: HiyaWorld, HiyaRequestAble {
     private func populateCountries(){
         let realm = self.realm.objects(CountryRealm.self)
         for country in realm {
-            _countries.append(Country(code: country.code, name: country.name))
+            if country.name == "UK" {
+                _countries.append(Country(code: country.code, name: "United Kingdom"))
+            } else {
+                _countries.append(Country(code: country.code, name: country.name))
+            }
         }
     }
 }
