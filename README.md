@@ -44,14 +44,14 @@ pod 'HiyaWorld'
 ### Swift Package Manager
 
 1. File > Swift Packages > Add Package Dependency
-2. Add `https://github.com/hiyacar/HiyaWorld.git`
+2. Add `https://github.com/nanyoliveira/HiyaWorld.git`
 
 _OR_
 
 Update `dependencies` in `Package.swift`
 ```swift
 dependencies: [
-    .package(url: "https://github.com/hiyacar/HiyaWorld.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/nanyoliveira/HiyaWorld.git", .upToNextMajor(from: "1.0.0"))
 ]
 ```
 
