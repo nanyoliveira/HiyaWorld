@@ -1,5 +1,5 @@
 #
-# Be sure to run `pod lib lint HiyaWorld.podspec' to ensure this is a
+# Be sure to run `pod lib lint HiyaWorldN.podspec' to ensure this is a
 # valid spec before submitting.
 #
 # Any lines starting with a # are optional, but their use is encouraged
@@ -30,13 +30,13 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '13.0'
 
-  s.source_files = 'Sources/HiyaWorld/**/*'
+  s.source_files = 'Sources/HiyaWorldN/**/*'
   s.swift_versions = '5.2'
   # s.resource_bundles = {
-  #   'HiyaWorld' => ['Sources/Assets/*.png']
+  #   'HiyaWorldN' => ['Sources/Assets/*.png']
   # }
 
-  #s.public_header_files = 'Sources/HiyaWorld/**/*.h'
+  #s.public_header_files = 'Sources/HiyaWorldN/**/*.h'
    s.frameworks = 'Foundation'
     s.dependency 'RealmSwift', '~> 10'
 end
