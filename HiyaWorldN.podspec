@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HiyaWorldN'
-  s.version          = '0.2.8'
+  s.version          = '0.2.9'
   s.summary          = 'Get all ISO 3166 Countries'
 
 # This description is used to generate tags and improve search results.
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Ariane Clarke' => 'ariane.clarke@hiyacar.co.uk' }
-  s.source           = { :git => 'https://github.com/nanyoliveira/HiyaWorldN.git', :tag => s.version }
+  s.source           = { :git => 'https://github.com/nanyoliveira/HiyaWorldN.git', :tag => '0.2.9' }
   # s.social_media_url = 'https://twitter.com/hiyacar'
 
   s.ios.deployment_target = '13.0'
